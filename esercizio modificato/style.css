@@ -34,6 +34,9 @@ main aside img {
     object-fit: cover;
 }
 
+main .center {
+    overflow-y: auto;
+}
 /*Card*/
 main .card{
     background-color: #2e3a46;

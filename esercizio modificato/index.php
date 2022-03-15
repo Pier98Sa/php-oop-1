@@ -39,7 +39,7 @@ foreach($database as $db){
     $array [] = $movie;
 }
 
-echo var_dump($array);
+//echo var_dump($array);
 
 ?>
 
@@ -76,7 +76,7 @@ echo var_dump($array);
                 <div class="row">
                    <!--Stampa dei dischi-->
                     <?php
-                        foreach($array as  $film){
+                        /*foreach($array as  $film){
                             echo '<div class="col g-4">';
                                 echo '<div class="card d-flex flex-column align-items-center">';
                                     echo '<div class="img-card p-3">';
@@ -94,7 +94,7 @@ echo var_dump($array);
                                     echo '</div>';
                                 echo '</div>';
                             echo '</div>';
-                        }
+                        }*/
                     ?>
 
                 </div>
