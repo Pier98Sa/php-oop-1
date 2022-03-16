@@ -70,11 +70,11 @@ foreach ($database as $db) {
     </header>
 
     <main class="d-flex justify-content-between">
-        <aside>
+        <aside class="d-none d-lg-block">
             <img src="./img/pngegg(2).png" alt="">
         </aside>
 
-        <div class="center">
+        <div class="center w-100">
             <div class="container my-5">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
                     <!--Stampa dei dischi-->
@@ -106,7 +106,7 @@ foreach ($database as $db) {
             </div>
         </div>
 
-        <aside>
+        <aside class="d-none d-lg-block">
             <img src="./img/pngegg(7).png" alt="">
         </aside>
 
