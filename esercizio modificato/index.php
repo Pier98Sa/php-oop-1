@@ -93,7 +93,7 @@ foreach ($database as $db) {
                                         echo '<h3 class="fs-5">' .'Director: '. $film -> director . '</h3>';
                                         echo '<h3 class="fs-5">' .'Genre: '. $film -> genre . '</h3>';
                                         echo '<h3 class="fs-5">' .$film -> year . '</h3>';
-                                        echo '<h3 class="fs-5">' .'Voto: '.$film -> vote . '</h3>';
+                                        echo '<h3 class="fs-5">' .'Vote: '.$film -> vote . '</h3>';
                                     echo '</div>';
 
                                  echo '</div>';
