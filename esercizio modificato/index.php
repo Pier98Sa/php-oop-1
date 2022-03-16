@@ -9,34 +9,35 @@ class Movie{
     public $vote;
 
     //creo un costruttore che mi imposti title e genre
-    public function __construct($poster,$title,$genre,$director,$year){
+    public function __construct($poster, $title, $genre, $director, $year)
+    {
         $this->poster = $poster;
         $this->title = $title;
         $this->genre = $genre;
-        $this->director = $director;  
-        $this->year = $year; 
+        $this->director = $director;
+        $this->year = $year;
     }
 
     //funzione per l'assegnazione di un voto da 0 a 10
     public function setVote($vote){
-        if(is_numeric($vote) && $vote >= 0 && $vote <= 10){
+        if (is_numeric($vote) && $vote >= 0 && $vote <= 10) {
             $this->vote = $vote;
-        }else{
+        } else {
             //nel caso non rispetti le condizioni gli do 0 come valore
             $this->vote = 0;
         }
     }
 }
 
-include __DIR__ . "./database.php";
+require_once __DIR__ . "./database.php";
 
 $array = array();
 
-foreach($database as $db){
-    $movie = new Movie($db['poster'],$db['title'],$db['genre'],$db['director'],$db['year']);
+foreach ($database as $db) {
+    $movie = new Movie($db['poster'], $db['title'], $db['genre'], $db['director'], $db['year']);
     $movie->setVote(10);
 
-    $array [] = $movie;
+    $array[] = $movie;
 }
 
 //echo var_dump($array);
@@ -45,6 +46,7 @@ foreach($database as $db){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,9 +59,10 @@ foreach($database as $db){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Smokum&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="d-flex justify-content-between align-items-center">
-        <img  src="./img/pngegg.png" alt="quentin tarantino">
+        <img src="./img/pngegg.png" alt="quentin tarantino">
 
         <h1>È Pulp ...</h1>
 
@@ -72,41 +75,43 @@ foreach($database as $db){
         </aside>
 
         <div class="center">
-            <div class="container">
-                <div class="row">
-                   <!--Stampa dei dischi-->
+            <div class="container my-5">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
+                    <!--Stampa dei dischi-->
                     <?php
-                        /*foreach($array as  $film){
-                            echo '<div class="col g-4">';
-                                echo '<div class="card d-flex flex-column align-items-center">';
-                                    echo '<div class="img-card p-3">';
-                                        echo '<img class="img-fluid" src="'.$film['poster'].'" '. 'alt="'.$film['title']. '">';
-                                    echo '</div>';
-
-                                    echo '<div class="info-card pb-2 text-center">';
-                                        echo '<h2 class="text-white p-2 fw-bold text-uppercase fs-3">'. $film['title'] .'</h2>';
-                                        echo '<div class="info-album">';
-                                            echo '<h3 class="fs-4">'.$film['director'].'</h3>';
-                                            echo '<h3 class="fs-4">'.$film['genre'].'</h3>';
-                                            echo '<h3 class="fs-5">'.$film['year'].'</h3>';
-                                        echo '</div>';   
-
-                                    echo '</div>';
+                    foreach ($array as  $film) {
+                        echo '<div class="col g-4">';
+                            echo '<div class="my_card d-flex flex-column align-items-center">';
+                                echo '<div class="img-card p-3">';
+                                    echo '<img class="img-fluid" src="' . $film -> poster . '" ' . 'alt="' . $film -> title . '">';
                                 echo '</div>';
+
+                                echo '<div class="info-card pb-2 text-center">';
+                                    echo '<h2 class="p-2 fw-bold text-uppercase fs-3">' . $film -> title . '</h2>';
+                                    
+                                    echo '<div>';
+                                        echo '<h3 class="fs-5">' .'Director: '. $film -> director . '</h3>';
+                                        echo '<h3 class="fs-5">' .'Genre: '. $film -> genre . '</h3>';
+                                        echo '<h3 class="fs-5">' .$film -> year . '</h3>';
+                                    echo '</div>';
+
+                                 echo '</div>';
                             echo '</div>';
-                        }*/
+                        echo '</div>';
+                    }
                     ?>
 
                 </div>
-
+                
             </div>
         </div>
 
         <aside>
-        <img src="./img/pngegg(7).png" alt="">
+            <img src="./img/pngegg(7).png" alt="">
         </aside>
 
     </main>
-    
+
 </body>
+
 </html>

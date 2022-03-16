@@ -44,6 +44,3 @@ echo "<p>"."Regista: " .  $KillBill2->director . "</p>";
 //assegnazione del voto
 $KillBill2->setVote(10);
 echo "<p>". "Voto: ".$KillBill2->vote  ."</p>";
-
-?>
-

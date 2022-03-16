@@ -38,11 +38,32 @@ main .center {
     overflow-y: auto;
 }
 /*Card*/
-main .card{
-    background-color: #2e3a46;
+.center .my_card{
+    background-color: #c82935;
     height: 100%;
 }
 
-.card .info-card{
-    color: #65727b;
+.center .my_card .info-card{
+    color: #ee9902;
+}
+
+/*scroolbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #131514;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #c82935;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ee9902;
 }
